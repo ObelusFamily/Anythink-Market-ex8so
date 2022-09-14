@@ -28,6 +28,7 @@ const ItemPreview = (props) => {
       props.favorite(item.slug);
     }
   }
+  const placeholderSrc = "placeholder.png"
   return (
     <div
       className="card bg-dark border-light p-3"
@@ -35,8 +36,8 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={item.image === "" ? "placeholder.png" : item.image}
-        placeholder="placeholder.png"
+        src={item.image === "" ? placeholderSrc : item.image}
+        placeholder={placeholderSrc}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
