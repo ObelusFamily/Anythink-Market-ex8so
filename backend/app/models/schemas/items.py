@@ -8,6 +8,8 @@ from app.models.schemas.rwschema import RWSchema
 DEFAULT_ITEMS_LIMIT = 20
 DEFAULT_ITEMS_OFFSET = 0
 
+DEFAULT_IMAGE_PLACEHOLDER="/placeholder.png"
+
 
 class ItemForResponse(RWSchema, Item):
     tags: List[str] = Field(..., alias="tagList")
@@ -21,7 +23,7 @@ class ItemInCreate(RWSchema):
     title: str
     description: str
     body: Optional[str] = None
-    image: Optional[str] = None
+    image: Optional[str] = DEFAULT_IMAGE_PLACEHOLDER
     tags: List[str] = Field([], alias="tagList")
 
 
